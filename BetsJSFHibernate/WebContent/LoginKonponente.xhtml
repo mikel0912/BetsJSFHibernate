@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form id="nireForm">
+			<center>
+				<h3>LOGIN</h3>
+				<table>
+					<tr>
+						<h:messages style="color:red" />
+					</tr>
+					<tr>
+						<td>Erabiltzaile izena:</td>
+						<td><h:inputText id="izen" value="#{login.izena}">
+							</h:inputText></td>
+					</tr>
+					<tr>
+						<td>Pasahitza:</td>
+						<td><h:inputSecret id="pass" value="#{login.pasahitza}"
+								styleClass="w3-input w3-animate-input">
+							</h:inputSecret></td>
+					</tr>
+				</table>
+				<p>
+					<h:commandButton value="Login" action="#{login.egiaztatu}" />
+					<h:commandButton value="Close" action="close" />
+				</p>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

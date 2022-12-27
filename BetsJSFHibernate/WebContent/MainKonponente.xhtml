@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form>
+			<center>
+				<h3>Select option</h3>
+				<p>
+					<h:commandButton value="Query questions" action="query" />
+				</p>
+				<p>
+					<h:commandButton value="Create questions" action="create"
+						rendered="#{login.disableCreate}" />
+				</p>
+				<p>
+					<h:commandButton value="Create events" action="createEvent"
+						rendered="#{login.disableCreate}" />
+				</p>
+				<p>
+					<h:commandButton value="Delete events" action="deleteEv"
+						rendered="#{login.disableCreate}" />
+				</p>
+				<p>
+					<h:commandButton value="Query sport events" action="querySport" />
+				</p>
+				<p>
+					<h:commandButton value="Show Questions" action="showQuestions" />
+				</p>
+				<p>
+					<h:commandButton value="Log out" action="#{login.logOut()}" />
+				</p>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

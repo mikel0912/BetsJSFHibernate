@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form id="QueryQuestion">
+			<center>
+				<table>
+					<tr>
+						<td><p>Question Date:<h:outputText id="dataAukeratua" value="  #{queryquestion.data}"
+									style="color:black" /></p></td>
+					</tr>
+					<tr>
+						<td><p:calendar id="data" value="#{queryquestion.data}"
+								navigator="false" mode="inline">
+								<p:ajax event="dateSelect"
+									listener="#{queryquestion.onDateSelect}"
+									update=":QueryQuestion:dataAukeratua"></p:ajax>
+							</p:calendar></td>
+					</tr>
+				</table>
+				<p>
+					<h:messages style="color:red" />
+					<h:commandButton action="#{queryquestion.showQuestion()}" value="Show Questions" />
+					<h:commandButton value="Back" action="closeToMain" />
+				</p>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

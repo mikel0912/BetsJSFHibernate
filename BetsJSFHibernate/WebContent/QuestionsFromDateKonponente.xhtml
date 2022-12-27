@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form id="QueryQuestion">
+			<center>
+				<table>
+					<tr>
+						<td><p>Questions</p></td>
+					</tr>
+					<tr>
+						<td><h:selectOneMenu value="#{queryquestion.galdera}">
+								<f:selectItems value="#{queryquestion.galderak}" />
+							</h:selectOneMenu></td>
+					</tr>
+				</table>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

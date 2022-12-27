@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form id="CreateQuestion">
+			<center>
+				<table>
+					<tr>
+						<td>Event Date:</td>
+						<td>Events: <h:outputText id="dataAukeratua"
+								value="  #{createquestion.data}" style="color:black" /></td>
+					</tr>
+					<tr>
+						<td><p:calendar id="data" value="#{createquestion.data}"
+								navigator="false" mode="inline">
+								<p:ajax event="dateSelect"
+									listener="#{createquestion.onDateSelect}"
+									update=":CreateQuestion:dataAukeratua"></p:ajax>
+								<p:ajax event="dateSelect"
+									listener="#{createquestion.onDateSelect2}" update="taulaEvents"></p:ajax>
+							</p:calendar></td>
+						<td><p:dataTable id="taulaEvents"
+								value="#{createquestion.gertaerak}" var="item"
+								selectionMode="single" selection="#{createquestion.gertaera}"
+								border="1" rowKey="#{item.eventNumber}">
+								<p:column headerText="Event#">#{item.eventNumber}</p:column>
+								<p:column headerText="Event">#{item.description}</p:column>
+							</p:dataTable></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><h:messages style="color:red" /></td>
+					</tr>
+					<tr>
+						<td>Question</td>
+						<td><h:inputText id="question"
+								value="#{createquestion.question}"></h:inputText></td>
+					</tr>
+					<tr>
+						<td>Min Bet</td>
+						<td><h:inputText id="minBet" value="#{createquestion.minBet}"
+								converterMessage="Min Bet admits floats only."></h:inputText></td>
+					</tr>
+				</table>
+				<p>
+					<h:commandButton value="Create Question"
+						action="#{createquestion.onButtonSelect}" />
+					<h:commandButton value="Close" action="closeToMain" />
+				</p>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<center>
+			<h:form id="DeleteSportEvent">
+				<center>
+					<table>
+						<tr>
+							<td><h:messages id="mezua" style="color:red" /></td>
+						</tr>
+						<tr>
+							<td>Sports:</td>
+						</tr>
+						<tr>
+							<td><p:dataTable id="taulaSports"
+									value="#{deleteevent.kirolak}" var="item"
+									selectionMode="single" selection="#{deleteevent.kirola}"
+									border="1" rowKey="#{item.sportNumber}">
+									<p:ajax event="rowSelect"
+										listener="#{deleteevent.onSportSelect}"
+										update=":DeleteSportEvent:taulaEvents :DeleteSportEvent:kirolAukeratua"></p:ajax>
+									<p:column headerText="Sport#">#{item.sportNumber}</p:column>
+									<p:column headerText="Sport">#{item.izena}</p:column>
+								</p:dataTable></td>
+						</tr>
+						<tr>
+							<td>Events of the sport <h:outputText id="kirolAukeratua"
+									value="  #{deleteevent.kirola}" style="color:black" /></td>
+						</tr>
+						<tr>
+							<td><p:dataTable id="taulaEvents"
+									value="#{deleteevent.gertaerak}" var="item"
+									selectionMode="single" selection="#{deleteevent.gertaera}"
+									border="1" rowKey="#{item.eventNumber}">
+									<p:column headerText="Event#">#{item.eventNumber}</p:column>
+									<p:column headerText="Event">#{item.description}</p:column>
+								</p:dataTable></td>
+						</tr>
+					</table>
+					<p>
+						<h:commandButton value="Delete"
+							action="#{deleteevent.onButtonSelect}" update=":DeleteSportEvent:mezua">
+							<f:ajax execute="DeleteSportEvent" render="taulaEvents mezua" />
+						</h:commandButton>
+						<h:commandButton value="Close" action="closeToMain" />
+					</p>
+				</center>
+			</h:form>
+		</center>
+	</f:view>
+</ui:composition>
+</html>

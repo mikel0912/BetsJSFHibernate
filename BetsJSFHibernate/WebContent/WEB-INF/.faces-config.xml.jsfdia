@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#MainKonponente.xhtml"
+  PATH="/MainKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#MainKonponente.xhtml:0" NAME="item"
+   PATH="/MainKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="create::#CreateQuestionKonponente.xhtml"
+    NAME="output" PATH="/CreateQuestionKonponente.xhtml"
+    TARGET="rules:#CreateQuestionKonponente.xhtml" TITLE="create" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#MainKonponente.xhtml:1" NAME="item1"
+   PATH="/MainKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="query::#QueryQuestionKonponente.xhtml"
+    NAME="output" PATH="/QueryQuestionKonponente.xhtml"
+    TARGET="rules:#QueryQuestionKonponente.xhtml" TITLE="query" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#MainKonponente.xhtml:2" NAME="item2"
+   PATH="/MainKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logOut::#HasieraKonponente.xhtml"
+    NAME="output" PATH="/HasieraKonponente.xhtml"
+    TARGET="rules:#HasieraKonponente.xhtml" TITLE="logOut" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#MainKonponente.xhtml:3" NAME="item3"
+   PATH="/MainKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="createEvent::#CreateEventKonponente.xhtml"
+    NAME="output" PATH="/CreateEventKonponente.xhtml"
+    TARGET="rules:#CreateEventKonponente.xhtml" TITLE="createEvent" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#MainKonponente.xhtml:4" NAME="item4"
+   PATH="/MainKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="querySport::#QuerySportEventKonponente.xhtml" NAME="output"
+    PATH="/QuerySportEventKonponente.xhtml"
+    TARGET="rules:#QuerySportEventKonponente.xhtml" TITLE="querySport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#CreateQuestionKonponente.xhtml"
+  PATH="/CreateQuestionKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#CreateQuestionKonponente.xhtml:0" NAME="item"
+   PATH="/CreateQuestionKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="closeToMain::#MainKonponente.xhtml"
+    NAME="output" PATH="/MainKonponente.xhtml"
+    TARGET="rules:#MainKonponente.xhtml" TITLE="closeToMain" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#QueryQuestionKonponente.xhtml"
+  PATH="/QueryQuestionKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#QueryQuestionKonponente.xhtml:0" NAME="item"
+   PATH="/QueryQuestionKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="closeToMain::#MainKonponente.xhtml"
+    NAME="output" PATH="/MainKonponente.xhtml"
+    TARGET="rules:#MainKonponente.xhtml" TITLE="closeToMain" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#HasieraKonponente.xhtml"
+  PATH="/HasieraKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#HasieraKonponente.xhtml:0" NAME="item"
+   PATH="/HasieraKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#LoginKonponente.xhtml" NAME="output"
+    PATH="/LoginKonponente.xhtml" TARGET="rules:#LoginKonponente.xhtml"
+    TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#HasieraKonponente.xhtml:1" NAME="item1"
+   PATH="/HasieraKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="register::#RegisterKonponente.xhtml"
+    NAME="output" PATH="/RegisterKonponente.xhtml"
+    TARGET="rules:#RegisterKonponente.xhtml" TITLE="register" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#HasieraKonponente.xhtml:2" NAME="item2"
+   PATH="/HasieraKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="query::#QueryQuestionKonponente.xhtml"
+    NAME="output" PATH="/QueryQuestionKonponente.xhtml"
+    TARGET="rules:#QueryQuestionKonponente.xhtml" TITLE="query" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#LoginKonponente.xhtml"
+  PATH="/LoginKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#LoginKonponente.xhtml:0" NAME="item"
+   PATH="/LoginKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#MainKonponente.xhtml" NAME="output"
+    PATH="/MainKonponente.xhtml" TARGET="rules:#MainKonponente.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#RegisterKonponente.xhtml"
+  PATH="/RegisterKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#RegisterKonponente.xhtml:0" NAME="item"
+   PATH="/RegisterKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#LoginKonponente.xhtml" NAME="output"
+    PATH="/LoginKonponente.xhtml" TARGET="rules:#LoginKonponente.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#CreateEventKonponente.xhtml"
+  PATH="/CreateEventKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#CreateEventKonponente.xhtml:0" NAME="item"
+   PATH="/CreateEventKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="closeToMain::#MainKonponente.xhtml"
+    NAME="output" PATH="/MainKonponente.xhtml"
+    TARGET="rules:#MainKonponente.xhtml" TITLE="closeToMain" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#QuerySportEventKonponente.xhtml"
+  PATH="/QuerySportEventKonponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#QuerySportEventKonponente.xhtml:0"
+   NAME="item" PATH="/QuerySportEventKonponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="closeToMain::#MainKonponente.xhtml"
+    NAME="output" PATH="/MainKonponente.xhtml"
+    TARGET="rules:#MainKonponente.xhtml" TITLE="closeToMain" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

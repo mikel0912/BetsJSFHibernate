@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<center>
+			<h:form id="QuerySportEvent">
+				<center>
+					<table>
+						<tr>
+							<td>Sports:</td>
+						</tr>
+						<tr>
+							<td><p:dataTable id="taulaSports"
+									value="#{queryquestion.kirolak}" var="item"
+									selectionMode="single" selection="#{queryquestion.kirola}"
+									border="1" rowKey="#{item.sportNumber}">
+									<p:ajax event="rowSelect"
+										listener="#{queryquestion.onSportSelect}"
+										update=":QuerySportEvent:taulaEvents :QuerySportEvent:kirolAukeratua"></p:ajax>
+									<p:column headerText="Sport#">#{item.sportNumber}</p:column>
+									<p:column headerText="Sport">#{item.izena}</p:column>
+								</p:dataTable></td>
+						</tr>
+						<tr>
+							<td>Events of the sport <h:outputText id="kirolAukeratua"
+									value="  #{queryquestion.kirola}" style="color:black" /></td>
+						</tr>
+						<tr>
+							<td><p:dataTable id="taulaEvents"
+									value="#{queryquestion.gertaerak}" var="item"
+									selectionMode="single" selection="#{queryquestion.gertaera}"
+									border="1" rowKey="#{item.eventNumber}">
+									<p:column headerText="Event#">#{item.eventNumber}</p:column>
+									<p:column headerText="Event">#{item.description}</p:column>
+									<p:column headerText="Date">#{item.eventDate}</p:column>
+								</p:dataTable></td>
+						</tr>
+					</table>
+					<p>
+						<h:commandButton value="Close" action="closeToMain"/>
+					</p>
+				</center>
+			</h:form>
+		</center>
+	</f:view>
+</ui:composition>
+</html>

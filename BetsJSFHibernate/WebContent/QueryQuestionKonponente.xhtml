@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:form id="QueryQuestion">
+			<center>
+				<table>
+					<tr>
+						<td><p>Event Date:</p></td>
+						<td><p>
+								Events:
+								<h:outputText id="dataAukeratua" value="  #{queryquestion.data}"
+									style="color:black" />
+							</p></td>
+					</tr>
+					<tr>
+						<td><p:calendar id="data" value="#{queryquestion.data}"
+								navigator="false" mode="inline">
+								<p:ajax event="dateSelect"
+									listener="#{queryquestion.onDateSelect}"
+									update=":QueryQuestion:dataAukeratua"></p:ajax>
+								<p:ajax event="dateSelect"
+									listener="#{queryquestion.onDateSelect2}"
+									update=":QueryQuestion:taulaEvents :QueryQuestion:taulaQuestions :QueryQuestion:gertaeraAukeratua"></p:ajax>
+							</p:calendar></td>
+						<td><p:dataTable id="taulaEvents"
+								value="#{queryquestion.gertaerak}" var="item"
+								selectionMode="single" selection="#{queryquestion.gertaera}"
+								border="1" rowKey="#{item.eventNumber}" styleClass="table"
+								headerClass="table-header"
+								rowClasses="table-odd-row, table-even-row">
+								<p:ajax event="rowSelect"
+									listener="#{queryquestion.onEventSelect}"
+									update=":QueryQuestion:taulaQuestions :QueryQuestion:gertaeraAukeratua"></p:ajax>
+								<p:column headerText="Event#">#{item.eventNumber}</p:column>
+								<p:column headerText="Event">#{item.description}</p:column>
+							</p:dataTable></td>
+					</tr>
+					<tr>
+						<td><p>
+								Questions for the event
+								<h:outputText id="gertaeraAukeratua"
+									value="  #{queryquestion.gertaera}"
+									style="color:black; font-family: verdana; font-size=20px;" />
+							</p></td>
+					</tr>
+					<tr>
+						<td><p:dataTable id="taulaQuestions"
+								value="#{queryquestion.galderak}" var="item"
+								selectionMode="single" selection="#{queryquestion.galdera}"
+								border="1" rowKey="#{item.questionNumber}" styleClass="table"
+								headerClass="table-header"
+								rowClasses="table-odd-row, table-even-row">
+								<p:column headerText="Question#">#{item.questionNumber}</p:column>
+								<p:column headerText="Question">#{item.question}</p:column>
+							</p:dataTable></td>
+					</tr>
+				</table>
+				<p>
+					<h:commandButton value="Close" action="closeToMain" />
+				</p>
+			</center>
+		</h:form>
+	</f:view>
+</ui:composition>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16685896614420" configfile="/BetsJSFHibernate/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Hasiera.xhtml" x="122" y="2894" id="pf16708724443910" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" outlinks="pf16708724443911 pf16708724443912" inlinks="pf16708724443914 pf16711043319770 pf16712976234022 pf16712994659684 pf16712994659685 pf16712994659686 pf16712994659687 pf16714462802670" path="/Hasiera.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="554" y="1924" id="pf16708724443915" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf16708724443916 pf16711043319770" inlinks="pf16708724443911 pf16708724443917" path="/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Register.xhtml" x="338" y="2275" id="pf16708724443918" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf16708724443917" inlinks="pf16708724443912" path="/Register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QueryQuestion.xhtml" x="986" y="2803" id="pf16708724443919" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf167087244439110 pf16712994659684" inlinks="pf167087244439111" path="/QueryQuestion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Main.xhtml" x="770" y="2692" id="pf167087244439112" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" outlinks="pf167087244439113 pf167087244439111 pf16708724443914 pf167087244439114 pf167087244439115 pf16714462802671 pf16716108582250" inlinks="pf16708724443916 pf167087244439116 pf167087244439110 pf167087244439117 pf167087244439118 pf16714462802672 pf16716108582251" path="/Main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CreateQuestion.xhtml" x="554" y="1540" id="pf167087244439119" referenceLink="//@navigationRule.18/@fromViewId|" outlinks="pf167087244439116 pf16712994659687" inlinks="pf167087244439113" path="/CreateQuestion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CreateEvent.xhtml" x="554" y="2308" id="pf167087244439120" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf167087244439117 pf16712994659686" inlinks="pf167087244439114" path="/CreateEvent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QuerySportEvent.xhtml" x="504" y="2628" id="pf167087244439121" referenceLink="//@navigationRule.16/@fromViewId|" outlinks="pf167087244439118 pf16712994659685" inlinks="pf167087244439115" path="/QuerySportEvent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="WEB-INF/facelets/templates/LogOut.xhtml" x="36" y="2616" id="pf16712976234023" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf16712976234022" path="/WEB-INF/facelets/templates/LogOut.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="GertaeraEzabatu.xhtml" x="1000" y="2583" id="pf16714462802673" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf16714462802672 pf16714462802670" inlinks="pf16714462802671" path="/GertaeraEzabatu.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ShowQuestion.xhtml" x="962" y="2422" id="pf16716108582262" outlinks="pf16716108582251 pf16716110284993" inlinks="pf16716108582250" path="/ShowQuestion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QuestionsFromDate.xhtml" x="1249" y="2369" id="pf16716110284994" inlinks="pf16716110284993" path="/QuestionsFromDate.xhtml"/>
+  <links id="pf16708724443911" target="pf16708724443915" source="pf16708724443910" outcome="login"/>
+  <links id="pf16708724443912" target="pf16708724443918" source="pf16708724443910" outcome="register"/>
+  <links id="pf16708724443916" target="pf167087244439112" source="pf16708724443915" outcome="true"/>
+  <links id="pf16708724443917" target="pf16708724443915" source="pf16708724443918" outcome="true"/>
+  <links id="pf167087244439113" target="pf167087244439119" source="pf167087244439112" outcome="create"/>
+  <links id="pf167087244439111" target="pf16708724443919" source="pf167087244439112" outcome="query"/>
+  <links id="pf167087244439116" target="pf167087244439112" source="pf167087244439119" outcome="closeToMain"/>
+  <links id="pf167087244439110" target="pf167087244439112" source="pf16708724443919" outcome="closeToMain"/>
+  <links id="pf16708724443914" target="pf16708724443910" source="pf167087244439112" outcome="logOut"/>
+  <links id="pf167087244439114" target="pf167087244439120" source="pf167087244439112" outcome="createEvent"/>
+  <links id="pf167087244439117" target="pf167087244439112" source="pf167087244439120" outcome="closeToMain"/>
+  <links id="pf167087244439115" target="pf167087244439121" source="pf167087244439112" outcome="querySport"/>
+  <links id="pf167087244439118" target="pf167087244439112" source="pf167087244439121" outcome="closeToMain"/>
+  <links id="pf16711043319770" target="pf16708724443910" source="pf16708724443915" outcome="close">
+    <bendPoints d1Width="-131" d1Height="578" d2Width="294" d2Height="-392"/>
+  </links>
+  <links id="pf16712976234022" target="pf16708724443910" source="pf16712976234023" outcome="logOut"/>
+  <links id="pf16712994659684" target="pf16708724443910" source="pf16708724443919" outcome="logOut"/>
+  <links id="pf16712994659685" target="pf16708724443910" source="pf167087244439121" outcome="logOut"/>
+  <links id="pf16712994659686" target="pf16708724443910" source="pf167087244439120" outcome="logOut">
+    <bendPoints d1Width="-182" d1Height="312" d2Width="262" d2Height="-274"/>
+  </links>
+  <links id="pf16712994659687" target="pf16708724443910" source="pf167087244439119" outcome="logOut">
+    <bendPoints d1Width="-284" d1Height="661" d2Width="170" d2Height="-693"/>
+  </links>
+  <links id="pf16714462802671" target="pf16714462802673" source="pf167087244439112" outcome="deleteEv"/>
+  <links id="pf16714462802672" target="pf167087244439112" source="pf16714462802673" outcome="closeToMain"/>
+  <links id="pf16714462802670" target="pf16708724443910" source="pf16714462802673" outcome="logOut">
+    <bendPoints d1Width="137" d1Height="304" d2Width="1045" d2Height="-7"/>
+  </links>
+  <links id="pf16716108582250" target="pf16716108582262" source="pf167087244439112" outcome="showQuestions"/>
+  <links id="pf16716108582251" target="pf167087244439112" source="pf16716108582262" outcome="closeToMain"/>
+  <links id="pf16716110284993" target="pf16716110284994" source="pf16716108582262" outcome="aukeratuta"/>
+</pageflow:Pageflow>
